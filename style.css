@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ce0e0e;
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 100px; 
+    padding-top: 250px;
+}
+
+.top-images{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 50px;
+    gap: 50px;
+}
+
+
+
+.bottom-images{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 50px;
+    gap: 50px;
+}
+
+
+.image-with-text {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-with-text img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-with-text:hover img {
+    transform: scale(1.1); /* Increase the scale on hover */
+}
+
+.center-image {
+    display: flex;
+    align-items: center;
+}
+
+.center-image .image-with-text {
+    position: relative;
+    overflow: hidden;
+}
+
+.center-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.center-image .image-with-text:hover img {
+    transform: scale(1.1); /* Increase the scale on hover */
+}
+
+.center-image .image-with-text::after {
+    content: attr(data-text);
+    position: absolute;
+    white-space: pre-line;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    font-style: italic;
+    font-weight: 700;
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 45px;
+}
+
+.center-image .image-with-text:hover::after {
+    opacity: 1; /* Show the overlay on hover */
+}
+
+
+.image-with-text::after {
+    content: attr(data-text); /* Overlay text from the 'data-text' attribute */
+    position: absolute;
+    white-space: pre-line;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    font-style: italic; /* Add italic formatting */
+    font-weight: 700;
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 45px; /* Specify the desired font size */
+}
+
+.image-with-text:hover::after {
+    opacity: 1; /* Show the overlay on hover */
+}
+
+
+.question {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: content-box;
+    background-color: transparent; /* Adjust background color as needed */
+}
+
+.image-with-question {
+    text-align: center;
+}
+
+.image-with-question img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-with-question:hover img {
+    transform: scale(1.1);
+}
+
+.options {
+    display: contents;
+    justify-content: center;
+    gap: 10px;
+    background-color: #ce0e0e;
+}
+
+.option {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.option:hover {
+    background-color: #45a049;
+}
